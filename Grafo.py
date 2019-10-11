@@ -55,6 +55,8 @@ while True:
     else:
         break
 
+print("\n****** RESULTADOS ******")
+
 dist = Dijkstra(origen, grafo)
 print("\nDistancias Mínimas por Dijsktra: ")
 for i in range(len(grafo.vertex)):
@@ -62,11 +64,13 @@ for i in range(len(grafo.vertex)):
 print(dist)
 print()
 
-dist = Dijkstra_apsp(grafo)
+dist = Dijkstra_ad(grafo)
+print("Matriz de Adyacencia por algoritmo de Dijsktra")
 print(dist)
 print()
 
 dist = Floyd_Warshall(grafo)
+print("Matriz de Adyacencia por algoritmo de Floyd-Warshall")
 print(dist)
 print()
 

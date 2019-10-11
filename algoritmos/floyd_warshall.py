@@ -1,24 +1,24 @@
 import numpy as np
 
-def Floyd_Warshall(graph):
+def Floyd_Warshall(grafo):
 
-    total_vertex = len(graph.vertex)
-    dist = np.zeros((total_vertex, total_vertex))
+    total_vertices = len(grafo.vertex)
+    dist = np.zeros((total_vertices, total_vertices))
     dist.fill(np.inf)
 
-    for idx in range(graph.source.size):
-        index_s = graph.vertex == graph.source[idx]
-        index_t = graph.vertex == graph.target[idx]
-        dist[index_s, index_t] = graph.weight[idx]
-    for index in range(graph.vertex.size):
+    for idx in range(grafo.source.size):
+        index_s = grafo.vertex == grafo.source[idx]
+        index_t = grafo.vertex == grafo.target[idx]
+        dist[index_s, index_t] = grafo.weight[idx]
+    for index in range(grafo.vertex.size):
         dist[index, index] = 0
 
-    for k in np.nditer(graph.vertex):
-        for i in np.nditer(graph.vertex):
-            for j in np.nditer(graph.vertex):
-                index_k = graph.vertex == k
-                index_i = graph.vertex == i
-                index_j = graph.vertex == j
+    for k in np.nditer(grafo.vertex):
+        for i in np.nditer(grafo.vertex):
+            for j in np.nditer(grafo.vertex):
+                index_k = grafo.vertex == k
+                index_i = grafo.vertex == i
+                index_j = grafo.vertex == j
 
                 if dist[index_i, index_j] > dist[index_i, index_k] + dist[index_k, index_j]:
                     dist[index_i, index_j] = dist[index_i, index_k] + dist[index_k, index_j]
