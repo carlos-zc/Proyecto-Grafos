@@ -7,7 +7,7 @@ destinos = []
 distancias = []
 
 tipo = int(input("Indique el tipo de grafo [1:grafo simple, 2:digrafo]: "))
-arist = int(input("Indique la cantidad de aristas (conexiones) que contiene el grafo: "))
+arist = int(input("Indique la cantidad de aristas (conexiones) que desea que  contenga el grafo: "))
 
 print("\n*** INGRESAR DATOS DEL GRAFO ***\n")
 if tipo == 1:
